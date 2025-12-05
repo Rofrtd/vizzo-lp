@@ -22,10 +22,13 @@ export default function VizzoDigitalLanding({
     <div
       className="min-h-screen w-full text-white font-sans"
       style={{
-        //@ts-expect-error
+        //@ts-ignore
         "--vz-primary": "#E42EFF",
+        //@ts-ignore
         "--vz-secondary": "#B61ECC",
+        //@ts-ignore
         "--vz-bg": "#0A0A0A",
+        //@ts-ignore
         "--vz-ink": "#F8FAFC",
       }}
     >
