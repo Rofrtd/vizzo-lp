@@ -1,6 +1,7 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import Image from "next/image";
 
 /**
  * Vizzo Digital Landing — PT/EN with Language Dropdown + Flags
@@ -21,13 +22,10 @@ export default function VizzoDigitalLanding({
     <div
       className="min-h-screen w-full text-white font-sans"
       style={{
-        //@ts-ignore
+        //@ts-expect-error
         "--vz-primary": "#E42EFF",
-        //@ts-ignore
         "--vz-secondary": "#B61ECC",
-        //@ts-ignore
         "--vz-bg": "#0A0A0A",
-        //@ts-ignore
         "--vz-ink": "#F8FAFC",
       }}
     >
@@ -268,7 +266,7 @@ function Topbar({
     <header className="sticky top-0 z-50 border-b border-white/10 bg-black/50 backdrop-blur">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-2">
         <a href="#" className="flex items-center gap-3">
-          <img src="/logo2.png" alt="Vizzo Digital Logo" className="h-20" />
+          <Image src="/logo2.png" alt="Vizzo Digital Logo" className="h-20" />
           {/* <span className="text-sm tracking-wider text-white/90">
             VIZZO DIGITAL
           </span> */}
@@ -479,7 +477,7 @@ function PartnersCarousel({ t, logos }: { t: any; logos: string[] }) {
             <div className="vz-track" role="list">
               {logos.concat([...logos, ...logos]).map((src, i) => (
                 <div key={`${src}-${i}`} className="vz-item" role="listitem">
-                  <img src={src} alt={`partner-${i}`} />
+                  <Image src={src} alt={`partner-${i}`} />
                 </div>
               ))}
             </div>
@@ -555,7 +553,7 @@ function Cases({ t }: { t: any }) {
             <div className="flex justify-center pt-6">
               {c.logo ? (
                 <div className="relative -mt-6 flex h-24 w-24 items-center justify-center">
-                  <img
+                  <Image
                     src={c.logo}
                     alt={`${c.title} logo`}
                     className="h-16 w-auto object-contain "
@@ -672,7 +670,7 @@ function Footer({ t }: { t: any }) {
     <footer className="border-t border-white/10 bg-black/60 px-6 py-2">
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 md:flex-row">
         <div className="flex items-center gap-3">
-          <img src="/logo.png" alt="Vizzo Digital Logo" className="h-8 w-8" />
+          <Image src="/logo.png" alt="Vizzo Digital Logo" className="h-8 w-8" />
           <span className="text-sm tracking-wider text-white/80">
             VIZZO DIGITAL
           </span>
