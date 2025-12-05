@@ -8,8 +8,13 @@ import { motion, useScroll, useTransform } from "framer-motion";
  * Headings font: "Special Gothic Condensed One Regular"
  */
 
-export default function VizzoDigitalLanding() {
-  const [lang, setLang] = useState<"pt" | "en">("pt");
+export default function VizzoDigitalLanding({
+  initialLang,
+}: {
+  initialLang?: "pt" | "en";
+}) {
+  // usa o idioma inicial vindo da rota (/pt ou /en); fallback para "pt"
+  const [lang, setLang] = useState<"pt" | "en">(initialLang ?? "pt");
   const t = translations[lang];
 
   return (
@@ -70,8 +75,8 @@ const translations = {
     presence: "Atuação na Austrália e Brasil",
     // novos campos para PresenceBar
     presence_countries: [
-      { code: "br", name: "Brasil", subtitle: "Estratégias locais" },
-      { code: "au", name: "Austrália", subtitle: "Execução remota & local" },
+      { code: "br", name: "Brasil", subtitle: "" },
+      { code: "au", name: "Austrália", subtitle: "" },
     ],
     presence_tagline: "Estratégias locais, alcance global",
     trust_intro: "Parceiros e clientes:",
@@ -166,8 +171,8 @@ const translations = {
     presence: "Operating across Australia and Brazil",
     // novos campos para PresenceBar em inglês
     presence_countries: [
-      { code: "br", name: "Brazil", subtitle: "Local strategies" },
-      { code: "au", name: "Australia", subtitle: "Remote & local delivery" },
+      { code: "br", name: "Brazil", subtitle: "" },
+      { code: "au", name: "Australia", subtitle: "" },
     ],
     presence_tagline: "Local strategies, global reach",
     trust_intro: "Partners & clients:",
